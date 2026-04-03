@@ -48,6 +48,7 @@ jobs:
       - name: Build Mac Electron app
         run: |
           cd electron
+          npx electron-builder --publish never
           npm run build
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
