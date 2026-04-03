@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  --font-primary: "Google Sans", "Google Sans Flex", sans-serif;
+}
+
+::selection {
+  background: #FFC000;
+  color: black;
+}
