@@ -1,41 +1,41 @@
 {
   "name": "amazon-audit-tool",
-  "productName" : "Amazon Audit Tool",
+  "productName": "Amazon Audit Tool",
   "version": "1.0.0",
   "description": "Amazon Audit Desktop App",
   "main": "main.js",
   "scripts": {
-  "start": "cross-env NODE_ENV=development electron .",
-  "build": "electron-builder --publish never"
-},,
-"build": {
-  "appId": "com.audit.app",
-  "files": [
-    "**/*",
-    "../frontend/dist/**/*"
-  ],
-  "mac": {
-    "target": "dmg",
-    "category": "public.app-category.business"
+    "start": "cross-env NODE_ENV=development electron .",
+    "build": "electron-builder --publish never"
   },
-  "win": {
-    "target": "nsis"
+  "build": {
+    "appId": "com.audit.app",
+    "files": [
+      "**/*",
+      "../frontend/dist/**/*"
+    ],
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.business"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "extraResources": [
+      {
+        "from": "../backend/dist/main.exe",
+        "to": "backend/main.exe"
+      },
+      {
+        "from": "../backend/dist/main",
+        "to": "backend/main"
+      },
+      {
+        "from": "../frontend/dist",
+        "to": "frontend/dist"
+      }
+    ]
   },
-  "extraResources": [
-  {
-    "from": "../backend/dist/main.exe",
-    "to": "backend/main.exe"
-  },
-  {
-    "from": "../backend/dist/main",
-    "to": "backend/main"
-  },
-  {
-    "from": "../frontend/dist",
-    "to": "frontend/dist"
-  }
-]
-},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -47,6 +47,6 @@
   "devDependencies": {
     "electron": "^41.1.1",
     "electron-builder": "^26.8.1",
-	"cross-env": "^7.0.3"
+    "cross-env": "^7.0.3"
   }
 }
